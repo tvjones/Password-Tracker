@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+#login, #register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgb(177, 177, 236)
+}
+
+#login form, #register form{
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column; 
+  background-color: white; 
+  width: 50vh;
+}
+
+#login form input, #register form input{
+  border:0;
+  border-bottom: 1px solid black;
+  padding: 1rem;
+}
+
+#login form button, #register form button{
+  margin-top: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+#landing-page{
+  background-color: rgb(227, 227, 238);
+  height: 100vh;
+}
+
+#landing-page h1{
+  margin: 0;
+  padding-top: 10vh;
+}
+
+#landing-page .links{
+  width: 60%;
+  display: flex;
+
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 5vh;
+}
+
+#landing-page .links button{
+  padding: 1rem;
+  width: 45%;
+  cursor: pointer;
+}
+
+.disclaimer{
+  position: absolute;
+  bottom: 0;
+  left:5px;
+  font-weight: bold;
+}
+
+#homepage{
+  background-color: rgb(177, 177, 236);
+  min-height: 100vh;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+#add-new-password{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+  padding-top: 5vh;
+}
+
+#add-new-password img{
+  height: 5rem;
+  width: 5rem;
+}
+
+#add-new-password form{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+#add-new-password button{
+  width: 10%;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+#add-new-password form input{
+  border:0;
+  border-bottom: 1px solid black;
+  padding: 1rem;
+  width: 20%;
+}
+
+#homepage hr{
+  width: 75%;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.account, .homepage-table{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+  font-size: 1.5rem;
+}
+
+.account{
+  font-size: 1rem;
+
+}
+
+.even{
+  background-color: rgb(134, 134, 230);;
+}
+
+.odd{
+  background-color: rgb(119, 119, 204);;
+}
+
+.account .website, .account .username, .account .password{
+  width: 30%;
+  font-weight: bold;
+}
+
+
+.hidden{
+  display: none;
+}
+
+
+.sign-out{
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+
+@media screen and (max-width:1000px) {
+
+  .homepage-table, .account{
+    width: 80%;
+  }
+
+  #add-new-password form{
+    display: block;
+    width: 60%;
+  }
+
+  #add-new-password form input{
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .sign-out{
+    width: 20%;
+  }
+
+  #login form, #register form{
+   width: 75%;
+  }
+
+  #landing-page img{
+    width: 75%;
+  }
+
+  #landing-page .links{
+    margin-top: 10rem;
+  }
+  
+}
