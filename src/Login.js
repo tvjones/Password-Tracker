@@ -1,34 +1,31 @@
 import React from "react";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import {auth} from "./firebase"
+import { auth } from "./firebase";
 
-function Login({setLoginStatus, setUID, setChoice}) {
-
-    
-  const [error, setError] = useState("")
+function Login({ setLoginStatus, setUID, setChoice }) {
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-      
-    const email = e.target[0].value
-    const password = e.target[1].value
+    const email = e.target[0].value;
+    const password = e.target[1].value;
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-       // console.log(user)
-        setUID(user.uid)
-        setError("")
-        setLoginStatus("logged in")
+        // console.log(user)
+        setUID(user.uid);
+        setError("");
+        setLoginStatus("logged in");
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setError(errorMessage)
+        setError(errorMessage);
       });
   };
 
@@ -40,7 +37,14 @@ function Login({setLoginStatus, setUID, setChoice}) {
         <input type="password" placeholder="Enter password"></input>
         <p>{error}</p>
         <button>Login</button>
-        <p onClick = {()=>{setChoice("register")}} className="cursor-pointer">I don't have an account</p>
+        <p
+          onClick={() => {
+            setChoice("register");
+          }}
+          className="cursor-pointer"
+        >
+          I don't have an account
+        </p>
       </form>
     </div>
   );

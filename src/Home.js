@@ -77,12 +77,10 @@ function Home({ uID, setLoginStatus }) {
   //const exposedPassword = createRef();
   //const hiddenPassword = createRef();
 
-
-  const showPassword = (e) =>{
-  
-    console.log(e.target)
-    e.target.className ="hidden"
-  }
+  const showPassword = (e) => {
+    console.log(e.target);
+    e.target.className = "hidden";
+  };
   /*
   const hidePassword = () =>{
     hiddenPassword.current.className = 
@@ -115,9 +113,16 @@ function Home({ uID, setLoginStatus }) {
           alt="add"
         ></img>
       </div>
-      <button onClick={()=>{setLoginStatus("logged out")}} className="sign-out">Sign Out</button>
+      <button
+        onClick={() => {
+          setLoginStatus("logged out");
+        }}
+        className="sign-out"
+      >
+        Sign Out
+      </button>
       <hr></hr>
-      
+
       <div id="accounts">
         <div className="homepage-table">
           <p>Website</p>
@@ -134,8 +139,9 @@ function Home({ uID, setLoginStatus }) {
             >
               <p className="website">{acct["website"]}</p>
               <p className="username">{acct["username"]}</p>
-              <p className="password"  onMouseEnter={showPassword}>{acct["password"]}</p>
-            
+              <p className="password" onMouseEnter={showPassword}>
+                {acct["password"]}
+              </p>
             </div>
           );
         })}

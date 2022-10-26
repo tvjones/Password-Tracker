@@ -16,9 +16,6 @@ const firebaseConfig = {
   databaseURL: "https://password-manager-592f5-default-rtdb.firebaseio.com/",
 };
 
-
-
-
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getDatabase(app);

@@ -1,9 +1,6 @@
 import React from "react";
 
-
-function Landing({setChoice}) {
- 
-
+function Landing({ setChoice }) {
   const handleRegister = () => {
     setChoice("register");
   };
@@ -26,7 +23,6 @@ function Landing({setChoice}) {
       </div>
       <p className="disclaimer">For demo purposes</p>
     </div>
-    
   );
 }
 
