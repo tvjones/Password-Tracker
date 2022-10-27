@@ -93,6 +93,7 @@ function Home({ uID, setLoginStatus }) {
 
   return (
     <div id="homepage">
+      <h1>Password Manager</h1>
       <div id="add-new-password">
         <form>
           <input
