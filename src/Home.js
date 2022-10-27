@@ -129,7 +129,7 @@ function Home({ uID, setLoginStatus }) {
       </button>
       <hr></hr>
       
-      <h3>Click on a password to reveal it...</h3>
+      <h3>Click a password to reveal it!</h3>
 
       <div id="accounts">
         <div className="homepage-table">

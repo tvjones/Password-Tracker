@@ -1,10 +1,10 @@
-*{
-  font-family: 'Poppins', sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,13 +31,27 @@ code {
   flex-direction: column;
   background-color: white;
   width: 50vh;
+  box-shadow: 4px 5px gray;
 }
 
 #login form input,
 #register form input {
   border: 0;
   border-bottom: 1px solid black;
+  margin-bottom: 5px;
   padding: 1rem;
+}
+
+#login form input:focus,
+#register form input:focus {
+  border-bottom: 1px solid rgb(177, 177, 236);
+  outline: none;
+}
+
+#register form button:hover,
+#login form button:hover {
+  background-color: rgb(177, 177, 236);
+  transition: 0.8s;
 }
 
 #login form button,
@@ -45,35 +59,86 @@ code {
   margin-top: 2rem;
   padding: 1rem;
   cursor: pointer;
+  font-size: 1rem;
+  border: 2px solid black;
 }
 
 #landing-page {
-  background-color: rgb(227, 227, 238);
   min-height: 100vh;
   padding-bottom: 20px;
+  /*background-color: rgb(177, 177, 236);*/
+  background-image: url("./images/landing-page-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #landing-page h1 {
   margin: 0;
   padding-top: 10vh;
+  margin-top: 10rem;
+  font-size: 4.5rem;
+  letter-spacing: 5px;
+  color: white;
+}
+
+#landing-page img {
+  width: 70%;
+  margin-top: 15rem;
+}
+
+#landing-page .bg-image {
+  width: 60%;
+}
+
+#landing-page .info {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+
+#landing-page p {
+  font-size: 1.5rem;
+  max-width: 70%;
+  margin: auto;
+  margin-top: 3rem;
+  font-weight: bold;
+}
+
+#landing-page h2 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  max-width: 80%;
+  margin: auto;
+  color: white;
 }
 
 #landing-page .links {
-  width: 60%;
   display: flex;
   justify-content: space-between;
   margin: auto;
-  margin-top: 5vh;
+  width: 50%;
 }
 
 #landing-page .links button {
-  padding: 1rem;
-  width: 45%;
-  cursor: pointer;
+  width: 30%;
+  padding: 30px 0;
+  background-color: white;
+  border: 5px solid rgb(205, 182, 221);
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+#landing-page .links button:hover {
+  border: 5px solid rgb(170, 124, 212);
+}
+
+#landing-page nav {
+  background-color: rgb(205, 182, 221);
+  padding: 5rem 0;
 }
 
 .disclaimer {
-  margin-top: 50px;
+  padding-top: 90px;
   font-weight: bold;
   font-size: 13px;
 }
@@ -83,9 +148,10 @@ code {
   min-height: 100vh;
 }
 
-#homepage h1{
+#homepage h1 {
   margin: 0;
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .cursor-pointer {
@@ -95,9 +161,18 @@ code {
 #add-new-password {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 80%;
+  padding: 2rem;
   margin: auto;
   padding-top: 5vh;
+  align-items: center;
+  background-color: white;
+  border: 3px solid rgb(138, 138, 185);
+}
+
+#add-new-password form input:focus {
+  border-bottom: 1px solid rgb(177, 177, 236);
+  outline: none;
 }
 
 #add-new-password img {
@@ -139,7 +214,7 @@ code {
   font-size: 1.5rem;
 }
 
-#homepage{
+#homepage {
   padding-bottom: 2rem;
 }
 
@@ -169,11 +244,61 @@ code {
 .sign-out {
   padding: 1rem;
   margin-top: 3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sign-out:hover {
+  background-color: rgb(228, 154, 154);
+  transition: 0.5s;
+}
+@media screen and (max-width: 1500px) {
+  nav {
+    padding: 0;
+  }
+
+  #landing-page .links {
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+  }
+
+  #landing-page .links button {
+    width: 30%;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  #landing-page .info {
+    display: block;
+  }
+
+  #landing-page h1 {
+    font-size: 3rem;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  #landing-page h2 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    max-width: 90%;
+  }
+
+  #landing-page p {
+    font-size: 1rem;
+  }
+
+  #landing-page .bg-image {
+    width: 90%;
+    margin: auto;
+    position: relative;
+    bottom: 60px;
+  }
 }
 
 @media screen and (max-width: 1000px) {
-
-  p{
+  p {
     font-size: 0.9rem;
   }
 
@@ -187,6 +312,9 @@ code {
     width: 60%;
   }
 
+  #add-new-password {
+    width: 60%;
+  }
   #add-new-password form input {
     display: block;
     margin-top: 1rem;
@@ -200,24 +328,5 @@ code {
   #login form,
   #register form {
     width: 75%;
-  }
-
-  #landing-page img {
-    width: 75%;
-  }
-
-  #landing-page .links {
-    
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    justify-content: center;
-  }
-
-  #landing-page .links button {
-    width: 100%;
-  }
-  #landing-page .links button:nth-of-type(2) {
-    margin-top: 10px;
   }
 }
