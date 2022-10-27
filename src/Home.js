@@ -80,15 +80,17 @@ function Home({ uID, setLoginStatus }) {
   //const exposedPassword = createRef();
   //const hiddenPassword = createRef();
 
-  /*const showPassword = (e) => {
-    console.log(e.target);
-    e.target.className = "hidden";
+  const showPassword = (index) => {
+    document.querySelectorAll(".password")[index].innerHTML = accounts[index]["password"];
   };
   
-  const hidePassword = () =>{
-    hiddenPassword.current.className = 
+  
+  const hidePassword = (index) =>{
+    document.querySelectorAll(".password")[index].innerHTML = "*".repeat(accounts[index]["password"].length);
   }
-*/
+
+
+
   return (
     <div id="homepage">
       <div id="add-new-password">
@@ -125,6 +127,8 @@ function Home({ uID, setLoginStatus }) {
         Sign Out
       </button>
       <hr></hr>
+      
+      <h3>Click on a password to reveal it...</h3>
 
       <div id="accounts">
         <div className="homepage-table">
@@ -137,13 +141,13 @@ function Home({ uID, setLoginStatus }) {
         {accounts.map((acct, index) => {
           return (
             <div
-              className={(index + 1) % 2 === 0 ? "account even" : "account odd"}
+              className={(index + 1) % 2 === 0 ? "account even": "account odd"}
               key={index}
             >
               <p className="website">{acct["website"]}</p>
               <p className="username">{acct["username"]}</p>
-              <p className="password" >
-                {acct["password"]}
+              <p className="password" onMouseLeave={()=>hidePassword(index)}  onClick={()=>showPassword(index)}>
+                {"*".repeat(acct["password"].length)}
               </p>
             </div>
           );
