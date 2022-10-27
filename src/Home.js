@@ -50,8 +50,8 @@ function Home({ uID, setLoginStatus }) {
     //console.log(accounts)
     if (
       usernameField.current.value.length !== 0 &&
-      websiteField.current.value !== 0 &&
-      passwordField.current.value !== 0
+      websiteField.current.value.length !== 0 &&
+      passwordField.current.value.length !== 0
     ) {
       writeNewPost(
         uID,
@@ -68,6 +68,9 @@ function Home({ uID, setLoginStatus }) {
           setAccounts([...accounts, data[key]]);
         }
       });
+      websiteField.current.value =""
+      usernameField.current.value= ""
+      passwordField.current.value =""
     }
   };
 
@@ -77,11 +80,11 @@ function Home({ uID, setLoginStatus }) {
   //const exposedPassword = createRef();
   //const hiddenPassword = createRef();
 
-  const showPassword = (e) => {
+  /*const showPassword = (e) => {
     console.log(e.target);
     e.target.className = "hidden";
   };
-  /*
+  
   const hidePassword = () =>{
     hiddenPassword.current.className = 
   }
@@ -139,7 +142,7 @@ function Home({ uID, setLoginStatus }) {
             >
               <p className="website">{acct["website"]}</p>
               <p className="username">{acct["username"]}</p>
-              <p className="password" onMouseEnter={showPassword}>
+              <p className="password" >
                 {acct["password"]}
               </p>
             </div>
