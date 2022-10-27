@@ -33,8 +33,8 @@ function Login({ setLoginStatus, setUID, setChoice }) {
     <div id="login">
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
-        <input type="email" placeholder="Enter email"></input>
-        <input type="password" placeholder="Enter password"></input>
+        <input required type="email" placeholder="Enter email"></input>
+        <input required type="password" placeholder="Enter password"></input>
         <p>{error}</p>
         <button>Login</button>
         <p
