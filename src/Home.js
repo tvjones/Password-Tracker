@@ -68,9 +68,9 @@ function Home({ uID, setLoginStatus }) {
           setAccounts([...accounts, data[key]]);
         }
       });
-      websiteField.current.value =""
-      usernameField.current.value= ""
-      passwordField.current.value =""
+      websiteField.current.value = "";
+      usernameField.current.value = "";
+      passwordField.current.value = "";
     }
   };
 
@@ -81,15 +81,15 @@ function Home({ uID, setLoginStatus }) {
   //const hiddenPassword = createRef();
 
   const showPassword = (index) => {
-    document.querySelectorAll(".password")[index].innerHTML = accounts[index]["password"];
+    document.querySelectorAll(".password")[index].innerHTML =
+      accounts[index]["password"];
   };
-  
-  
-  const hidePassword = (index) =>{
-    document.querySelectorAll(".password")[index].innerHTML = "*".repeat(accounts[index]["password"].length);
-  }
 
-
+  const hidePassword = (index) => {
+    document.querySelectorAll(".password")[index].innerHTML = "*".repeat(
+      accounts[index]["password"].length
+    );
+  };
 
   return (
     <div id="homepage">
@@ -128,31 +128,36 @@ function Home({ uID, setLoginStatus }) {
         Sign Out
       </button>
       <hr></hr>
-      
+
       <h3>Click a password to reveal it!</h3>
 
       <div id="accounts">
-        <div className="homepage-table">
-          <p>Website</p>
-          <p>Username</p>
-          <p>
-            Password <FontAwesomeIcon icon="fa-solid fa-plus" />
-          </p>
-        </div>
+        <table>
+          <tr>
+            <th>Website</th>
+            <th>Username</th>
+            <th>Password</th>
+          </tr>
         {accounts.map((acct, index) => {
           return (
-            <div
-              className={(index + 1) % 2 === 0 ? "account even": "account odd"}
+            <tr
+              className={(index + 1) % 2 === 0 ? "aeven" : "odd"}
               key={index}
             >
-              <p className="website">{acct["website"]}</p>
-              <p className="username">{acct["username"]}</p>
-              <p className="password" onMouseLeave={()=>hidePassword(index)}  onClick={()=>showPassword(index)}>
+              <td className="website">{acct["website"]}</td>
+              <td className="username">{acct["username"]}</td>
+              <td
+                className="password"
+                onMouseLeave={() => hidePassword(index)}
+                onClick={() => showPassword(index)}
+              >
                 {"*".repeat(acct["password"].length)}
-              </p>
-            </div>
+              </td>
+            </tr>
           );
+          
         })}
+          </table>
       </div>
     </div>
   );
