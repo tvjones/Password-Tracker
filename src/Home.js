@@ -97,19 +97,16 @@ function Home({ uID, setLoginStatus }) {
       <div id="add-new-password">
         <form>
           <input
-          required
             type="text"
             ref={websiteField}
             placeholder="Enter website"
           ></input>
           <input
-          required
             type="text"
             ref={usernameField}
             placeholder="Enter username"
           ></input>
           <input
-          required
             type="text"
             ref={passwordField}
             placeholder="Enter password"
