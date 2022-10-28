@@ -141,7 +141,7 @@ function Home({ uID, setLoginStatus }) {
         {accounts.map((acct, index) => {
           return (
             <tr
-              className={(index + 1) % 2 === 0 ? "aeven" : "odd"}
+              className={(index + 1) % 2 === 0 ? "even" : "odd"}
               key={index}
             >
               <td className="website">{acct["website"]}</td>
