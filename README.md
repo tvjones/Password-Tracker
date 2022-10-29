@@ -10,7 +10,7 @@ Sign up for account if you dont have one already, add account details and they'l
 
 * Firebase authentication
 * Firebase DB
-* Refs is React 
+* Refs in React 
 
 
 ### Screenshots:
